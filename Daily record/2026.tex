@@ -1,0 +1,73 @@
+\documentclass[11pt, a4paper, oneside]{report}
+
+% --- 宏包加载 ---
+\usepackage[utf8]{inputenc}
+\usepackage[UTF8]{ctex} % 支持中文
+\usepackage[margin=2.5cm]{geometry} % 页边距
+\usepackage{fancyhdr} % 页眉页脚
+\usepackage{tcolorbox} % 彩色框
+\usepackage{enumitem} % 列表格式
+\usepackage{titlesec} % 标题格式
+\usepackage{lastpage} % 获取总页数
+
+% --- 样式设置 ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \leftmark}
+\fancyhead[R]{\small \thepage / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% 自定义任务框样式
+\newtcolorbox{workbox}{
+    colback=red!5!white, colframe=red!75!black, 
+    title=\textbf{工作任务}, fonttitle=\bfseries
+}
+\newtcolorbox{lifebox}{
+    colback=green!5!white, colframe=green!60!black, 
+    title=\textbf{生活点滴}, fonttitle=\bfseries
+}
+\newtcolorbox{mindbox}{
+    colback=blue!5!white, colframe=blue!60!black, 
+    title=\textbf{思考记录}, fonttitle=\bfseries
+}
+
+% 标题美化
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\raggedright}{第 \thechapter \ 章}{10pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+
+% --- 文档信息 ---
+\title{\Huge \textbf{2026 年度工作生活笔记}}
+\author{颂华}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+% --- 第一章：一月 ---
+\chapter{2026年 1月}
+
+% --- 每日记录开始 ---
+\section{1月14日：星期三}
+
+\begin{workbox}
+    \begin{itemize}[leftmargin=*]
+        \item 本周需要辅导本科生和研究生的论文
+        \item 青基的本子要快点写，1月底之前不知道能不能写一个初版
+        \item FQAR的模拟再看看，把simulation部分全补充了
+    \end{itemize}
+\end{workbox}
+
+\begin{lifebox}
+    \begin{itemize}[leftmargin=*]
+        \item 凌晨写完2026年总结。感受到的快乐和对目标的热情
+        \item 向财务处要钱，没钱花了
+    \end{itemize}
+\end{lifebox}
+
+
+\end{document}
