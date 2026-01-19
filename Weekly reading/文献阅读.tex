@@ -1,0 +1,91 @@
+\documentclass[11pt, a4paper, oneside]{report}
+
+% --- 宏包加载 ---
+\usepackage[utf8]{inputenc}
+\usepackage[UTF8]{ctex} % 支持中文
+\usepackage[margin=2.5cm]{geometry} % 页边距
+\usepackage{fancyhdr} % 页眉页脚
+\usepackage{tcolorbox} % 彩色框
+\usepackage{enumitem} % 列表格式
+\usepackage{titlesec} % 标题格式
+\usepackage{lastpage} % 获取总页数
+
+% --- 样式设置 ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small \leftmark}
+\fancyhead[R]{\small \thepage / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% 自定义任务框样式
+\newtcolorbox{paperbox}[1][]{
+    colback=black!5!white, colframe=black!75!white, 
+    title=\textbf{#1}, fonttitle=\bfseries
+}
+
+% 标题美化
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\raggedright}{第 \thechapter \ 章}{10pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+
+\newcommand\qianqian[1]{{\color{red}[{Qianqian: #1}]}}
+\newcommand\songhua[1]{{\bf{Songhua: #1}}}
+\newcommand{\bm}{\mathbf}
+
+% --- 文档信息 ---
+\title{\Huge \textbf{文献阅读}}
+% \author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+% --- 第一章：一月 ---
+\chapter{实际问题}
+
+\section{福利彩票}
+
+\subsection{经济水平和人口(结构)如何对福利彩票影响?}
+
+\begin{paperbox}[刘文静, 白宇飞, \& 宋赫民. (2023). 人口老龄化,教育水平与体育彩票消费倾向——基于2005—2020年中国省级面板数据的实证分析. 北京体育大学学报, 46(6), 29-40.]
+    基于2005—2020年的省级面板数据,运用广义最小二乘法等实证工具,检验了人口老龄化、教育水平与体育彩票消费倾向之间的关系。研究发现,人口老龄化与体彩消费倾向显著负相关,老龄化水平对数每提高1\%,体育彩票消费倾向将下降0.256\%;教育水平对体彩消费倾向具有显著正向影响,教育水平每提高1\%,个体消费意愿将提升0.308\%。更深入的研究结果显示,老龄化依然会对西部地区体彩消费倾向产生抑制作用,但是对东中部地区已逐渐呈现出正向促进趋势,教育水平提升对东中部和西部地区体育彩票消费倾向均会产生正向影响;分类型来看,老龄化和教育水平对乐透型及即开型体育彩票的影响更为明显。进一步分析表明,当综合考虑学历和年龄2个方面因素时,教育水平提升有助于减弱人口老龄化对体育彩票消费倾向的消极影响,购彩人口质量红利逐渐显现。基于此,有必要在提高体彩产品吸引力、推动体彩数字化发展、打造体彩公益公信形象3个方面持续发力,以切实增强高教育水平老年群体购买体彩的体验感、在线购彩的便利感以及购彩行为带来的对国家发展和社会进步的参与感。\\
+    
+    \songhua{本文贵在处理细节，即各个变量之间的交互效应分析得还算不错。同时，也对体彩分为乐透型等类型分类分析其影响效果。}
+\end{paperbox}
+
+\begin{paperbox}[史文文、伊哲、李娜（2023）中国福利彩票销量影响因素的组态路径分析--———基于31个省（自治区、直辖市）的模糊集定性比较分析. 世界博彩与旅游研究, 1, 29-42.]
+    基于组态视角，以31个省(自治区、直辖市)为案例分析样本，运用fsQCA方法探讨中国福利彩票销量影响因素之间的互动关系。研究发现：(1)\textbf{中国福利彩票高销量发展路径共有四条路径，且都以经济水平和人口作为核心条件，归纳发展模式为“经济-人口”双重驱动型。}与中国体育彩票发展模式对比，中国福利彩票面临发展路径单一的问题。(2)\textbf{绝大部分省份都是替代型，较少有促进型和主导型的发展路径}，说明各省的福利彩票销量仍有较大提升空间。(3)不同地区、不同时段促进东部和中西部地区福利彩票销量的因素存在较大差异。\\
+    
+    \songhua{提出中国福利彩票销量发展模式为``经济-人口''双重驱动型。}
+\end{paperbox}
+
+\subsection{}
+
+
+\section{Missing Data 缺失数据}
+
+\subsection{缺失数据综述}
+
+\subsection{如何使用 factor model 插补缺失数据?}
+
+列参考文献：
+\begin{paperbox}[Su \& Wang (2025, JoE) Inference for large dimensional factor models under general missing data patterns]
+
+\end{paperbox}
+
+评论用名字的开头，如 \songhua{balabala}
+
+% \chapter{学生指导中常见问题}
+
+% \section{数学公式}
+
+% \begin{itemize}
+%     \item 行间数学公式要跟着标点符号。
+% \end{itemize}
+
+\end{document}

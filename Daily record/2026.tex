@@ -55,10 +55,10 @@
 
 \begin{workbox}
     \begin{itemize}[leftmargin=*]
-        \item 本周需要辅导本科生和研究生的论文
-        \item 青基的本子要快点写，1月底之前不知道能不能写一个初版
-        \item FQAR的模拟再看看，把simulation部分全补充了
-        \item Han2022年的理论证明要完全梳理一遍，并说出哪里有问题
+        \item 本周需要辅导本科生和研究生的论文（研究生约了下周一，本科生约了下下周）
+        \item 青基的本子要快点写，1月底之前不知道能不能写一个初版（还没开始）
+        \item FQAR的模拟再看看，把simulation部分全补充了（加油加油加油啊啊啊）
+        \item Han2022年的理论证明要完全梳理一遍，并说出哪里有问题（done）
     \end{itemize}
 \end{workbox}
 
@@ -78,7 +78,7 @@
     \end{itemize}
 \end{workbox}
 
-\subsection{1月15日：周五}
+\subsection{1月15日：周四}
 \begin{workbox}
 \begin{itemize}
     \item 模拟部分先收尾！和X老师约了明天晚上的讨论。要抓住 $H$ 在 $x_{t}$ 是参数时，会导致不可识别，从而不能和2024年JoE的文章比较$H$的估计。
@@ -87,4 +87,27 @@
 \end{itemize}
 \end{workbox}
 
+\subsection{1月16日--1月17日：周五和周六}
+
+\begin{workbox}
+    \begin{itemize}
+        \item 周五忙了一天，上午构思simulation结果。下午和朋友聊了一会，发现有个智库项目，打算申请一下。晚上和X老师有meeting。meeting很顺利，但自己也得努力做！已经两天了进度还没更新，怎么回事呢？
+        \item 周六早上睡到中午，下午3点开始学，看了Han2022年AoS那篇文章和证明，大体思路看懂了。
+        \item 想了一个把tensor 分解用于非参数估计的idea，就是 $y_{t}=g(y_{t-1},y_{t-2},\ldots)$，其中 $y_{t}\in\mathbb{R}$。如果假设 $g(\cdot)$ 存在 CP 结构？好像之前讲过讨论班？JRSSB上的文章。刚刚确认了一下，是Broadcasted Nonparametric Tensor Regression，但思路不一样，之前文章是用于讨论 $X$ 是tensor，$y=f(X)+\varepsilon$ 怎么降维。我想做的是
+        $$
+        y_{t}=\omega+\sum_{j=1}^{\infty}a_{j}\times  v_{j}'z_{t-j},
+        $$
+        其中 $z_{t-1}=(y_{t-1},y_{t-2},\ldots)'$ and $v\in\mathbb{R}^\infty$。哈哈哈哈太搞笑了，这个idea就和Z老师的quantile index model非常类似了，只是我考虑无穷阶降维，创新点不够啊。
+    \end{itemize}
+\end{workbox}
+
+\subsection{1月18日：周日}
+\begin{workbox}
+    \begin{itemize}
+        \item 今天早上回复X老师消息，问如何做二元函数检验，我把二元函数检验问题通过基函数转为了单个检验上做，还考虑了eigenvalue效应，从而提高检验统计量的渐近效率，不错不错。但quantile forecast的渐近性质又遇难了，以为很简单的，总是在这种地方卡着，感觉就是做的太少了，讨论的太少太粗了，很多地方都没有下意识的反应。
+        \item 下午和晚上过了一遍Han2022 AoS的文章，过了前半部分细节。感觉非渐近证明就是不等式换来换去也没啥意思和特别眼前一亮的东西。后面思考怎么用在我们的情况下，发现一个大问题：\textbf{我之前的优化函数把基函数乘过去从而把函数优化问题转为参数优化问题的方法是错误的，因为这样写的情况下会忽略掉近似误差}（我想了半天还以为我们的情况下没有渐近误差呢）。
+        \item 晚上没咋干活
+        \item 评价：工作量过载，但工作效率不高。
+    \end{itemize}
+\end{workbox}
 \end{document}
