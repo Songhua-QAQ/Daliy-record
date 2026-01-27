@@ -129,4 +129,10 @@
     \item 增加covariance function估计的细节描述
 \end{enumerate}
 
+\subsection{1月27日}
+
+今天下午和X君的论文simulation又卡了一点，发现随着样本量的增加，$H$ 的Bias出现了先减小后增加的情况。昨晚发现了这个情况但一直没想明白，后面和DeepSeek聊，D说可能是第三个eigenvalue逐渐可识别，但eigengap太小，导致第二个eigen function的识别也出现了问题。这个还挺麻烦的，想把样本量调小，但第二个eigen function的识别性小样本又看不出来。
+
+于是打算放一放，推导一下理论证明思考一下和L老师的论文。对比了Li2025ss的论文，发现approximation error主要是来自于目标函数的差异，而回头看Han2022AoS的论文，发现其证明手法基本是基于梯度函数算的，其他涉及到参数的变换部分，用的都是基础的不等式。后面我也思考了一下，在我们的情况下，应该先定义一个有限阶近似的 $\mathscr{A}^*=[\int\mathscr{A}\times_{i\in\mathcal{I}_{f}}\Phi_{i}]\times_{i\in\mathcal{I}_{f}}\Phi_{i}$。证明过程中仅需要证明估计值收敛到$\mathscr{A}^*$即可，而$\mathscr{A}^*$收敛至真实值的部分用$\mathscr{A}$上逐点的连续性即可控制。那么对于该定义的有限阶真值，使用Han2022AoS应该就能证明？目前看来是这样，只需要将该文章的目标函数拓展为 $L^\dagger+\delta$，其中$L^{\dagger}$是$L$的一个实际优化目标，其实际优化目标与理论优化目标之间具有一个近似误差$\delta$。在这个目标框架下重新走一遍Wang老师的论文和Han2022Aos的论文，应该就能证明。
+
 \end{document}
